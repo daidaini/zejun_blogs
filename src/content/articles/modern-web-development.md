@@ -6,7 +6,7 @@ tags: ["Web开发", "前端技术", "技术哲学", "用户体验"]
 excerpt: "现代Web开发不仅仅是技术的堆砌，更是一门融合了艺术、哲学和人文关怀的综合学科。本文探讨如何在技术实现与用户体验之间找到平衡。"
 readTime: "7 分钟"
 author: "泽君"
-image: "/images/articles/modern-web.jpg"
+image: "/images/articles/song-aesthetics.jpg"
 ---
 
 # 现代Web开发的艺术与哲学

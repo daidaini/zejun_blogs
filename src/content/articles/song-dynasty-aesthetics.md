@@ -5,7 +5,7 @@ category: "文化"
 tags: ["宋朝美学", "传统文化", "现代设计"]
 excerpt: "探索宋朝文人如何将生活艺术化，以及这种美学理念如何启发现代设计思维。从苏轼的诗词到朱熹的理学，从园林设计到器物制作，宋代美学的精髓在于追求简约而不简单的境界。"
 readTime: "8 分钟"
-image: "/images/articles/song-aesthetics.jpg"
+image: "/images/articles/《水调歌头·明月几时有》.svg"
 author: "泽君"
 ---
 

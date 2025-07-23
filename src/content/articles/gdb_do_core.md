@@ -6,8 +6,10 @@ tags: ["gdb", "Linux"]
 excerpt: "如何使用gdb调试coredump的笔记记录"
 readTime: "8 分钟"
 author: "泽君"
-image: "https://media.istockphoto.com/id/1093975156/photo/open-source-software-concept-design.webp?s=2048x2048&w=is&k=20&c=haX3Oyq4bS1Hgr1g4iObr_JxZdtdjod6alryKNEknPQ="
+image: "/images/articles/gdb-debugging.svg"  # 文章封面图（可选）
 ---
+
+# GDB调试与Core文件分析
 
 ## 什么是coredump
 当程序发生内存越界访问等行为时，会触发OS的保护机制，此时OS会产生一个信号发送给对应的进程。当进程从内核态到用户态切换时，该进程会处理这个信号。
@@ -54,6 +56,9 @@ file locks                      (-x) unlimited
 ulimit -c unlimited
 ```
 
+![Core Dump设置](/images/articles/core-dump-settings.png)
+*图：Linux系统中Core Dump的配置设置*
+
 如果要使给配置永久生效，可以：
 ```bash
 echo "ulimit -c unlimited" >> /etc/profile
@@ -89,10 +94,17 @@ sysctl -p /etc/sysctl.conf
 
 
 ## gdb调试core
+
+![GDB调试流程](/images/articles/gdb-debugging-flow.png)
+*图：GDB调试Core文件的完整流程*
+
 ### 启动
 ```bash
 gdb prpgress corefile
 ```
+
+![GDB启动界面](/images/articles/gdb-startup.png)
+*图：GDB启动后的界面示例*
 
 ### 设置断点
 

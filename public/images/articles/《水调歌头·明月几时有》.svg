@@ -1,0 +1,235 @@
+<svg viewBox="0 0 500 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 渐变定义 -->
+    <radialGradient id="nightSky" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#191970;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#000080;stop-opacity:1" />
+      <stop offset="80%" style="stop-color:#0f0f23;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
+    </radialGradient>
+    
+    <radialGradient id="moonGradient" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#f0f8ff;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#e6e6fa;stop-opacity:0.8" />
+    </radialGradient>
+    
+    <radialGradient id="moonGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.3" />
+      <stop offset="70%" style="stop-color:#f0f8ff;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0" />
+    </radialGradient>
+    
+    <linearGradient id="cloudGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#f5f5f5;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#e0e0e0;stop-opacity:0.4" />
+    </linearGradient>
+    
+    <linearGradient id="palaceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#ffb347;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#daa520;stop-opacity:0.4" />
+    </linearGradient>
+    
+    <!-- 滤镜效果 -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  
+  <style>
+    .night-bg {
+      fill: url(#nightSky);
+    }
+    
+    .moon {
+      fill: url(#moonGradient);
+      filter: url(#glow);
+      animation: moonFloat 8s ease-in-out infinite;
+    }
+    
+    .moon-glow {
+      fill: url(#moonGlow);
+      animation: glowPulse 4s ease-in-out infinite;
+    }
+    
+    .cloud {
+      fill: url(#cloudGradient);
+      animation: cloudDrift 12s linear infinite;
+    }
+    
+    .cloud:nth-child(2n) {
+      animation-duration: 15s;
+      animation-delay: -5s;
+    }
+    
+    .star {
+      fill: #ffffff;
+      animation: starTwinkle 2s ease-in-out infinite;
+    }
+    
+    .star:nth-child(2n) {
+      animation-delay: -1s;
+    }
+    
+    .star:nth-child(3n) {
+      animation-delay: -0.5s;
+    }
+    
+    .palace {
+      fill: url(#palaceGradient);
+      opacity: 0.6;
+      animation: palaceShimmer 6s ease-in-out infinite;
+    }
+    
+    .title {
+      font-family: '楷体', 'KaiTi', serif;
+      font-size: 28px;
+      font-weight: bold;
+      fill: #f0f8ff;
+      text-anchor: middle;
+      filter: url(#shadow);
+    }
+    
+    .author {
+      font-family: '楷体', 'KaiTi', serif;
+      font-size: 16px;
+      fill: #e6e6fa;
+      text-anchor: middle;
+    }
+    
+    .poem-text {
+      font-family: '楷体', 'KaiTi', serif;
+      font-size: 18px;
+      fill: #f5f5f5;
+      text-anchor: middle;
+      line-height: 1.6;
+    }
+    
+    .key-verse {
+      font-family: '楷体', 'KaiTi', serif;
+      font-size: 20px;
+      font-weight: bold;
+      fill: #ffd700;
+      text-anchor: middle;
+      filter: url(#glow);
+    }
+    
+    @keyframes moonFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+    
+    @keyframes glowPulse {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.1); }
+    }
+    
+    @keyframes cloudDrift {
+      0% { transform: translateX(-100px); opacity: 0; }
+      20% { opacity: 0.8; }
+      80% { opacity: 0.8; }
+      100% { transform: translateX(600px); opacity: 0; }
+    }
+    
+    @keyframes starTwinkle {
+      0%, 100% { opacity: 0.3; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+    
+    @keyframes palaceShimmer {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.7; }
+    }
+  </style>
+  
+  <!-- 夜空背景 -->
+  <rect x="0" y="0" width="500" height="700" class="night-bg"/>
+  
+  <!-- 月亮光晕 -->
+  <circle cx="380" cy="120" r="80" class="moon-glow"/>
+  <circle cx="380" cy="120" r="60" class="moon-glow"/>
+  
+  <!-- 明月 -->
+  <circle cx="380" cy="120" r="45" class="moon"/>
+  
+  <!-- 月亮表面纹理 -->
+  <ellipse cx="370" cy="110" rx="8" ry="12" fill="#e6e6fa" opacity="0.3"/>
+  <ellipse cx="385" cy="125" rx="6" ry="8" fill="#e6e6fa" opacity="0.2"/>
+  <ellipse cx="375" cy="130" rx="4" ry="6" fill="#e6e6fa" opacity="0.25"/>
+  
+  <!-- 飘渺云彩 -->
+  <ellipse cx="200" cy="80" rx="60" ry="15" class="cloud"/>
+  <ellipse cx="180" cy="85" rx="40" ry="10" class="cloud"/>
+  
+  <ellipse cx="320" cy="200" rx="80" ry="20" class="cloud" style="animation-delay: -3s"/>
+  <ellipse cx="300" cy="205" rx="50" ry="12" class="cloud" style="animation-delay: -3s"/>
+  
+  <ellipse cx="100" cy="150" rx="70" ry="18" class="cloud" style="animation-delay: -8s"/>
+  
+  <!-- 繁星点点 -->
+  <circle cx="80" cy="60" r="2" class="star"/>
+  <circle cx="150" cy="45" r="1.5" class="star"/>
+  <circle cx="220" cy="70" r="2" class="star"/>
+  <circle cx="120" cy="100" r="1" class="star"/>
+  <circle cx="280" cy="50" r="1.5" class="star"/>
+  <circle cx="180" cy="110" r="1" class="star"/>
+  <circle cx="320" cy="80" r="2" class="star"/>
+  <circle cx="90" cy="130" r="1" class="star"/>
+  <circle cx="250" cy="120" r="1.5" class="star"/>
+  <circle cx="420" cy="60" r="1" class="star"/>
+  <circle cx="450" cy="90" r="1.5" class="star"/>
+  <circle cx="50" cy="90" r="1" class="star"/>
+  
+  <!-- 琼楼玉宇（天宫） -->
+  <g class="palace">
+    <rect x="200" y="180" width="100" height="40" rx="5"/>
+    <polygon points="190,180 210,160 290,160 310,180"/>
+    <rect x="220" y="160" width="60" height="20" rx="3"/>
+    <polygon points="210,160 230,145 270,145 290,160"/>
+    <rect x="235" y="145" width="30" height="15" rx="2"/>
+    <polygon points="225,145 240,135 260,135 275,145"/>
+  </g>
+  
+  <!-- 装饰性边框 -->
+  <rect x="20" y="20" width="460" height="660" rx="15" ry="15" fill="none" stroke="#4169e1" stroke-width="2" opacity="0.4"/>
+  <rect x="25" y="25" width="450" height="650" rx="12" ry="12" fill="none" stroke="#6495ed" stroke-width="1" opacity="0.3"/>
+  
+  <!-- 标题 -->
+  <text x="250" y="280" class="title">水调歌头</text>
+  <text x="250" y="310" class="author">宋·苏轼</text>
+  
+  <!-- 词文内容 -->
+  <text x="250" y="350" class="poem-text">明月几时有？把酒问青天。</text>
+  <text x="250" y="375" class="poem-text">不知天上宫阙，今夕是何年。</text>
+  <text x="250" y="400" class="poem-text">我欲乘风归去，又恐琼楼玉宇，</text>
+  <text x="250" y="425" class="poem-text">高处不胜寒。</text>
+  
+  <text x="250" y="460" class="poem-text">起舞弄清影，何似在人间。</text>
+  
+  <text x="250" y="500" class="poem-text">转朱阁，低绮户，照无眠。</text>
+  <text x="250" y="525" class="poem-text">不应有恨，何事长向别时圆？</text>
+  
+  <text x="250" y="560" class="poem-text">人有悲欢离合，月有阴晴圆缺，</text>
+  <text x="250" y="585" class="poem-text">此事古难全。</text>
+  
+  <!-- 点睛之笔 - 千古名句 -->
+  <text x="250" y="630" class="key-verse">但愿人长久，千里共婵娟。</text>
+  
+  <!-- 装饰性水波纹 -->
+  <path d="M50,650 Q150,640 250,650 T450,650" stroke="#4169e1" stroke-width="1" fill="none" opacity="0.3"/>
+  <path d="M50,660 Q150,650 250,660 T450,660" stroke="#6495ed" stroke-width="1" fill="none" opacity="0.2"/>
+  
+  <!-- 印章效果 -->
+  <circle cx="420" cy="620" r="25" fill="none" stroke="#dc143c" stroke-width="2" opacity="0.7"/>
+  <text x="420" y="625" font-family="楷体" font-size="10" fill="#dc143c" text-anchor="middle" opacity="0.8">东坡居士</text>
+</svg>
