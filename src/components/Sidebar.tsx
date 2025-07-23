@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import SidebarSearchBox from './SidebarSearchBox';
 // 移除服务器端导入，改为使用 props
 
 interface RecentArticle {
@@ -70,24 +71,7 @@ const Sidebar = ({ recentArticles, categories, tags }: SidebarProps = {}) => {
   return (
     <aside className="space-y-8">
       {/* Search */}
-      <div className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm rounded-xl p-6 border border-amber-200/50 dark:border-slate-600/50 hover:border-amber-300 dark:hover:border-amber-600 transition-all duration-300 hover:shadow-lg">
-        <h3 className="font-serif text-lg font-semibold text-slate-800 dark:text-slate-100 mb-4 flex items-center">
-          <svg className="w-5 h-5 mr-2 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-          搜索
-        </h3>
-        <div className="relative">
-          <input
-            type="text"
-            placeholder="搜索文章..."
-            className="w-full px-4 py-2 pl-10 bg-amber-50 dark:bg-slate-700 border border-amber-200 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-slate-800 dark:text-slate-200 placeholder-slate-500 dark:placeholder-slate-400 transition-all duration-200"
-          />
-          <svg className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-slate-500 dark:text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-        </div>
-      </div>
+      <SidebarSearchBox />
       {/* Recent Articles */}
       <div className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm rounded-xl p-6 border border-amber-200/50 dark:border-slate-600/50 hover:border-amber-300 dark:hover:border-amber-600 transition-all duration-300 hover:shadow-lg">
         <h3 className="font-serif text-lg font-semibold text-slate-800 dark:text-slate-100 mb-4 flex items-center">
