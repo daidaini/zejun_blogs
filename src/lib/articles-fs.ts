@@ -74,19 +74,26 @@ async function readArticleFile(filename: string): Promise<Article | null> {
     } else {
       // 处理 HTML 文件
       // 尝试从 HTML 注释中提取元数据
-      const metaMatch = fileContents.match(/<!--\s*META:([\s\S]*?)-->/);
+      // 支持两种格式：<!-- META: {...} --> 和 <!-- META {...} -->
+      const metaMatch = fileContents.match(/<!--\s*META:?\s*([\s\S]*?)-->/);
       let meta: Record<string, unknown> = {};
-      
+
       if (metaMatch) {
         try {
-          meta = JSON.parse(metaMatch[1]);
+          // 清理元数据字符串，移除可能的换行和多余空格
+          const metaString = metaMatch[1].trim();
+          meta = JSON.parse(metaString);
+          console.log(`Successfully parsed meta for ${filename}:`, meta);
         } catch (e) {
           console.warn(`Failed to parse meta for ${filename}:`, e);
+          console.warn(`Meta string was:`, metaMatch[1]);
         }
+      } else {
+        console.warn(`No META comment found in ${filename}`);
       }
-      
+
       // 移除元数据注释，获取纯 HTML 内容
-      const content = fileContents.replace(/<!--\s*META:[\s\S]*?-->/, '').trim();
+      const content = fileContents.replace(/<!--\s*META:?[\s\S]*?-->/, '').trim();
       
       return {
         slug,
