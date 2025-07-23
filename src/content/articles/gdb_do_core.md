@@ -6,6 +6,7 @@ tags: ["gdb", "Linux"]
 excerpt: "如何使用gdb调试coredump的笔记记录"
 readTime: "8 分钟"
 author: "泽君"
+image: "https://media.istockphoto.com/id/1093975156/photo/open-source-software-concept-design.webp?s=2048x2048&w=is&k=20&c=haX3Oyq4bS1Hgr1g4iObr_JxZdtdjod6alryKNEknPQ="
 ---
 
 ## 什么是coredump

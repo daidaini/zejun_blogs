@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import Navigation from '@/components/Navigation';
 import Sidebar from '@/components/Sidebar';
-import MarkdownRenderer from '@/components/MarkdownRenderer';
+import ReactMarkdownRenderer from '@/components/ReactMarkdownRenderer';
 import { getArticleBySlug, getAllArticles } from '@/lib/articles-fs';
 
 interface ArticlePageProps {
@@ -70,7 +70,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
             {/* Article Content */}
             {article.isMarkdown ? (
-              <MarkdownRenderer content={article.content} />
+              <ReactMarkdownRenderer content={article.content} />
             ) : (
               <div
                 className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-serif prose-headings:text-slate-800 dark:prose-headings:text-slate-100 prose-p:text-slate-700 dark:prose-p:text-slate-300 prose-blockquote:border-amber-500 prose-blockquote:text-amber-700 dark:prose-blockquote:text-amber-300 prose-strong:text-slate-800 dark:prose-strong:text-slate-200"

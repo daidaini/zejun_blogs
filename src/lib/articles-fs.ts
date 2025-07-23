@@ -2,9 +2,6 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { remark } from 'remark';
-import remarkHtml from 'remark-html';
-import remarkGfm from 'remark-gfm';
 
 export interface ArticleMeta {
   title: string;
@@ -25,17 +22,6 @@ export interface Article extends ArticleMeta {
 
 // 文章目录路径
 const articlesDirectory = path.join(process.cwd(), 'src/content/articles');
-
-// 配置 remark 处理器
-const processor = remark()
-  .use(remarkGfm) // 支持 GitHub Flavored Markdown
-  .use(remarkHtml, { sanitize: false }); // 转换为 HTML
-
-// 将 Markdown 转换为 HTML
-async function markdownToHtml(markdown: string): Promise<string> {
-  const result = await processor.process(markdown);
-  return result.toString();
-}
 
 // 获取所有文章文件名
 function getArticleFilenames(): string[] {
@@ -71,10 +57,7 @@ async function readArticleFile(filename: string): Promise<Article | null> {
     if (isMarkdown) {
       // 解析 Markdown 文件的 frontmatter
       const { data, content } = matter(fileContents);
-      
-      // 将 Markdown 转换为 HTML
-      const htmlContent = await markdownToHtml(content);
-      
+
       return {
         slug,
         title: data.title || slug,
@@ -85,7 +68,7 @@ async function readArticleFile(filename: string): Promise<Article | null> {
         readTime: data.readTime,
         image: data.image,
         author: data.author,
-        content: htmlContent,
+        content, // 保持原始 Markdown 内容
         isMarkdown: true
       };
     } else {
