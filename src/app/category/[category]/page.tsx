@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import Navigation from '@/components/Navigation';
 import ArticleCard from '@/components/ArticleCard';
 import Sidebar from '@/components/Sidebar';
-import { getArticlesByCategory, getAllCategories } from '@/lib/articles-server';
+import { getArticlesByCategory, getAllCategories } from '@/lib/articles-fs';
 
 interface CategoryPageProps {
   params: Promise<{
@@ -27,13 +27,13 @@ const categoryDescriptions: { [key: string]: string } = {
 };
 
 // 根据URL参数获取分类数据
-const getCategoryData = (categoryParam: string) => {
+const getCategoryData = async (categoryParam: string) => {
   // 将URL参数转换为中文分类名
   const categoryName = Object.keys(categoryNameMap).find(
     key => categoryNameMap[key] === categoryParam
   ) || categoryParam;
 
-  const articles = getArticlesByCategory(categoryName);
+  const articles = await getArticlesByCategory(categoryName);
 
   if (articles.length === 0 && !categoryDescriptions[categoryName]) {
     return null;
@@ -48,7 +48,7 @@ const getCategoryData = (categoryParam: string) => {
 
 export default async function CategoryPage({ params }: CategoryPageProps) {
   const { category } = await params;
-  const categoryData = getCategoryData(category);
+  const categoryData = await getCategoryData(category);
 
   if (!categoryData) {
     notFound();
@@ -110,8 +110,8 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 }
 
 // Generate static params for all categories
-export function generateStaticParams() {
-  const categories = getAllCategories();
+export async function generateStaticParams() {
+  const categories = await getAllCategories();
   const categoryNameMap: { [key: string]: string } = {
     '技术': 'tech',
     '文化': 'culture',

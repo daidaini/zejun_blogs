@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import Navigation from '@/components/Navigation';
 import Sidebar from '@/components/Sidebar';
 import MarkdownRenderer from '@/components/MarkdownRenderer';
-import { getArticleBySlug, getAllArticles } from '@/lib/articles-server';
+import { getArticleBySlug, getAllArticles } from '@/lib/articles-fs';
 
 interface ArticlePageProps {
   params: Promise<{
@@ -14,7 +14,7 @@ interface ArticlePageProps {
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
   const { slug } = await params;
-  const article = getArticleBySlug(slug);
+  const article = await getArticleBySlug(slug);
 
   if (!article) {
     notFound();
@@ -105,8 +105,8 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 }
 
 // Generate static params for all articles in the content directory
-export function generateStaticParams() {
-  const articles = getAllArticles();
+export async function generateStaticParams() {
+  const articles = await getAllArticles();
   return articles.map((article) => ({
     slug: article.slug,
   }));

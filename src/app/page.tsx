@@ -2,13 +2,13 @@ import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import ArticleCard from '@/components/ArticleCard';
 import Sidebar from '@/components/Sidebar';
-import { getAllArticles, getAllCategories, getAllTags } from '@/lib/articles-server';
+import { getAllArticles, getAllCategories, getAllTags } from '@/lib/articles-fs';
 
-export default function Home() {
+export default async function Home() {
   // 从文件系统获取所有文章
-  const allArticles = getAllArticles();
-  const allCategories = getAllCategories();
-  const allTags = getAllTags();
+  const allArticles = await getAllArticles();
+  const allCategories = await getAllCategories();
+  const allTags = await getAllTags();
 
   // 获取推荐文章（前2篇）
   const featuredArticles = allArticles.slice(0, 2).map(article => ({
