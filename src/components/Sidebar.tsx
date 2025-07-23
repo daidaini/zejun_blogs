@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+// 移除服务器端导入，改为使用 props
 
 interface RecentArticle {
   title: string;
@@ -22,9 +23,15 @@ interface Tag {
   href: string;
 }
 
-const Sidebar = () => {
-  // Mock data - in a real app, this would come from props or API
-  const recentArticles: RecentArticle[] = [
+interface SidebarProps {
+  recentArticles?: RecentArticle[];
+  categories?: Category[];
+  tags?: Tag[];
+}
+
+const Sidebar = ({ recentArticles, categories, tags }: SidebarProps = {}) => {
+  // 使用默认数据作为后备
+  const defaultRecentArticles: RecentArticle[] = [
     {
       title: "宋代文人的生活美学与现代设计思维",
       slug: "song-dynasty-aesthetics",
@@ -32,20 +39,9 @@ const Sidebar = () => {
       image: "/images/articles/song-aesthetics.jpg"
     },
     {
-      title: "从《清明上河图》看古代城市规划智慧",
-      slug: "qingming-urban-planning",
-      date: "2024-01-12",
-      image: "/images/articles/qingming.jpg"
-    },
-    {
       title: "禅意编程：在代码中寻找内心的宁静",
       slug: "zen-programming",
       date: "2024-01-10"
-    },
-    {
-      title: "传统书法与现代字体设计的对话",
-      slug: "calligraphy-typography",
-      date: "2024-01-08"
     },
     {
       title: "茶道精神在产品设计中的体现",
@@ -54,21 +50,22 @@ const Sidebar = () => {
     }
   ];
 
-  const categories: Category[] = [
-    { name: "技术", count: 12, href: "/category/tech" },
-    { name: "文化", count: 8, href: "/category/culture" },
-    { name: "思考", count: 15, href: "/category/thoughts" },
-    { name: "生活", count: 6, href: "/category/life" }
+  const defaultCategories: Category[] = [
+    { name: "技术", count: 1, href: "/category/tech" },
+    { name: "文化", count: 1, href: "/category/culture" },
+    { name: "思考", count: 1, href: "/category/thoughts" }
   ];
 
-  const tags: Tag[] = [
-    { name: "宋朝美学", count: 5, href: "/tag/song-aesthetics" },
-    { name: "禅意设计", count: 8, href: "/tag/zen-design" },
-    { name: "传统文化", count: 12, href: "/tag/traditional-culture" },
-    { name: "现代思维", count: 7, href: "/tag/modern-thinking" },
-    { name: "编程哲学", count: 4, href: "/tag/programming-philosophy" },
-    { name: "生活感悟", count: 9, href: "/tag/life-insights" }
+  const defaultTags: Tag[] = [
+    { name: "宋朝美学", count: 1, href: "/tag/宋朝美学" },
+    { name: "禅意编程", count: 1, href: "/tag/禅意编程" },
+    { name: "传统文化", count: 1, href: "/tag/传统文化" },
+    { name: "产品设计", count: 1, href: "/tag/产品设计" }
   ];
+
+  const finalRecentArticles = recentArticles || defaultRecentArticles;
+  const finalCategories = categories || defaultCategories;
+  const finalTags = tags || defaultTags;
 
   return (
     <aside className="space-y-8">
@@ -103,7 +100,7 @@ const Sidebar = () => {
           最新文章
         </h3>
         <div className="space-y-4">
-          {recentArticles.map((article, index) => (
+          {finalRecentArticles.map((article) => (
             <Link
               key={article.slug}
               href={`/article/${article.slug}`}
@@ -147,7 +144,7 @@ const Sidebar = () => {
           分类
         </h3>
         <div className="space-y-2">
-          {categories.map((category) => (
+          {finalCategories.map((category) => (
             <Link
               key={category.name}
               href={category.href}
@@ -173,7 +170,7 @@ const Sidebar = () => {
           标签
         </h3>
         <div className="flex flex-wrap gap-2">
-          {tags.map((tag) => (
+          {finalTags.map((tag) => (
             <Link
               key={tag.name}
               href={tag.href}

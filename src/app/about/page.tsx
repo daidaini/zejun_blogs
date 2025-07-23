@@ -31,7 +31,7 @@ export default function AboutPage() {
 
             <h2>我的理念</h2>
             <blockquote>
-              <p>"博学之，审问之，慎思之，明辨之，笃行之"</p>
+              <p>&ldquo;博学之，审问之，慎思之，明辨之，笃行之&rdquo;</p>
               <cite>—— 《礼记·中庸》</cite>
             </blockquote>
             <p>
@@ -73,7 +73,7 @@ export default function AboutPage() {
             <div className="mt-12 p-6 bg-amber-50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
               <h3 className="text-amber-800 dark:text-amber-200 mb-3">博客理念</h3>
               <p className="text-amber-700 dark:text-amber-300 mb-0">
-                "文章千古事，得失寸心知。" 每一篇文章都是我对世界的理解和感悟，
+                &ldquo;文章千古事，得失寸心知。&rdquo; 每一篇文章都是我对世界的理解和感悟，
                 希望能够在这个浮躁的时代，为读者带来一些思考的空间和内心的宁静。
               </p>
             </div>

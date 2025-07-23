@@ -45,7 +45,7 @@ const MarkdownRenderer = ({ content, className = '' }: MarkdownRendererProps) =>
       html = html.replace(/^(\d+)\. (.*$)/gim, '<li>$1. $2</li>');
 
       // Wrap consecutive list items in ul/ol tags
-      html = html.replace(/(<li>.*<\/li>)/gims, '<ul>$1</ul>');
+      html = html.replace(/(<li>.*<\/li>)/gim, '<ul>$1</ul>');
       html = html.replace(/<\/ul>\s*<ul>/gim, '');
 
       // Blockquotes

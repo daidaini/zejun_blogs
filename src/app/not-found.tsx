@@ -49,12 +49,12 @@ export default function NotFound() {
             </h1>
             <p className="text-lg text-slate-600 dark:text-slate-300 mb-6 max-w-2xl mx-auto">
               您寻找的页面似乎已经消失在虚无缥缈的网络空间中。
-              就像古人所说："山重水复疑无路，柳暗花明又一村。"
+              就像古人所说：&ldquo;山重水复疑无路，柳暗花明又一村。&rdquo;
             </p>
             
             {/* Traditional Quote */}
             <blockquote className="font-serif text-base md:text-lg text-amber-700 dark:text-amber-300 italic mb-6">
-              "道可道，非常道；名可名，非常名。"
+              &ldquo;道可道，非常道；名可名，非常名。&rdquo;
               <cite className="block mt-2 text-sm text-slate-500 dark:text-slate-400 not-italic">
                 —— 《道德经》
               </cite>

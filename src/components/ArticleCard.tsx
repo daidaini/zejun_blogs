@@ -5,10 +5,10 @@ import Image from 'next/image';
 
 interface ArticleCardProps {
   title: string;
-  excerpt: string;
+  excerpt?: string;
   category: string;
   date: string;
-  readTime: string;
+  readTime?: string;
   image?: string;
   slug: string;
   featured?: boolean;
@@ -73,9 +73,11 @@ const ArticleCard = ({
           </h3>
 
           {/* Excerpt */}
-          <p className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed line-clamp-3">
-            {excerpt}
-          </p>
+          {excerpt && (
+            <p className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed line-clamp-3">
+              {excerpt}
+            </p>
+          )}
 
           {/* Meta Information */}
           <div className="flex items-center justify-between text-sm text-slate-500 dark:text-slate-400">
@@ -86,12 +88,14 @@ const ArticleCard = ({
               {date}
             </time>
             
-            <span className="flex items-center">
-              <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              {readTime}
-            </span>
+            {readTime && (
+              <span className="flex items-center">
+                <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                {readTime}
+              </span>
+            )}
           </div>
 
           {/* Read More Indicator */}

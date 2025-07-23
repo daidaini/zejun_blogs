@@ -80,7 +80,7 @@ const Hero = () => {
         {/* Decorative Quote */}
         <div className={`relative mb-8 transition-all duration-1000 delay-500 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <blockquote className="font-serif text-base md:text-lg text-amber-700 dark:text-amber-300 italic">
-            "博学之，审问之，慎思之，明辨之，笃行之"
+            &ldquo;博学之，审问之，慎思之，明辨之，笃行之&rdquo;
           </blockquote>
           <cite className="block mt-2 text-sm text-slate-500 dark:text-slate-400">
             —— 《礼记·中庸》

@@ -2,65 +2,49 @@ import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import ArticleCard from '@/components/ArticleCard';
 import Sidebar from '@/components/Sidebar';
+import { getAllArticles, getAllCategories, getAllTags } from '@/lib/articles-server';
 
 export default function Home() {
-  // Mock data for articles - in a real app, this would come from a CMS or API
-  const featuredArticles = [
-    {
-      title: "宋代文人的生活美学与现代设计思维",
-      excerpt: "探索宋朝文人如何将生活艺术化，以及这种美学理念如何启发现代设计思维。从苏轼的诗词到朱熹的理学，从园林设计到器物制作，宋代美学的精髓在于追求简约而不简单的境界。",
-      category: "文化",
-      date: "2024-01-15",
-      readTime: "8 分钟",
-      image: "/images/articles/song-aesthetics.jpg",
-      slug: "song-dynasty-aesthetics",
-      featured: true
-    },
-    {
-      title: "从《清明上河图》看古代城市规划智慧",
-      excerpt: "张择端的《清明上河图》不仅是艺术杰作，更是古代城市规划的智慧结晶。通过分析画中的街道布局、商业分布和人流动线，我们可以学到许多现代城市设计的启示。",
-      category: "思考",
-      date: "2024-01-12",
-      readTime: "6 分钟",
-      image: "/images/articles/qingming.jpg",
-      slug: "qingming-urban-planning"
-    }
-  ];
+  // 从文件系统获取所有文章
+  const allArticles = getAllArticles();
+  const allCategories = getAllCategories();
+  const allTags = getAllTags();
 
-  const recentArticles = [
-    {
-      title: "禅意编程：在代码中寻找内心的宁静",
-      excerpt: "编程不仅是技术活动，更是一种修行。通过禅意的编程方式，我们可以在代码中找到内心的平静，写出更优雅、更有生命力的程序。",
-      category: "技术",
-      date: "2024-01-10",
-      readTime: "5 分钟",
-      slug: "zen-programming"
-    },
-    {
-      title: "传统书法与现代字体设计的对话",
-      excerpt: "从王羲之的行书到现代的字体设计，汉字的美学传承从未断绝。探讨传统书法如何为现代字体设计提供灵感和指导。",
-      category: "文化",
-      date: "2024-01-08",
-      readTime: "7 分钟",
-      slug: "calligraphy-typography"
-    },
-    {
-      title: "茶道精神在产品设计中的体现",
-      excerpt: "茶道讲究的是一期一会，每一次品茶都是独特的体验。这种精神如何应用到产品设计中，创造出更有温度的用户体验？",
-      category: "思考",
-      date: "2024-01-05",
-      readTime: "4 分钟",
-      slug: "tea-ceremony-design"
-    },
-    {
-      title: "极简主义的东方智慧",
-      excerpt: "极简主义并非西方专利，东方文化中的留白美学、禅宗思想都蕴含着极简的智慧。探索东方极简主义的独特魅力。",
-      category: "生活",
-      date: "2024-01-03",
-      readTime: "6 分钟",
-      slug: "eastern-minimalism"
-    }
-  ];
+  // 获取推荐文章（前2篇）
+  const featuredArticles = allArticles.slice(0, 2).map(article => ({
+    ...article,
+    featured: true
+  }));
+
+  // 获取最新文章（除了推荐文章之外的文章）
+  const recentArticles = allArticles.slice(2);
+
+  // 准备侧边栏数据
+  const sidebarRecentArticles = allArticles.slice(0, 5).map(article => ({
+    title: article.title,
+    slug: article.slug,
+    date: article.date,
+    image: article.image
+  }));
+
+  const categoryNameMap: { [key: string]: string } = {
+    '技术': 'tech',
+    '文化': 'culture',
+    '思考': 'thoughts',
+    '生活': 'life'
+  };
+
+  const sidebarCategories = allCategories.map(category => ({
+    name: category.name,
+    count: category.count,
+    href: `/category/${categoryNameMap[category.name] || category.name.toLowerCase()}`
+  }));
+
+  const sidebarTags = allTags.slice(0, 6).map(tag => ({
+    name: tag.name,
+    count: tag.count,
+    href: `/tag/${encodeURIComponent(tag.name)}`
+  }));
 
   return (
     <div className="min-h-screen">
@@ -100,7 +84,11 @@ export default function Home() {
 
           {/* Sidebar */}
           <div className="lg:col-span-1">
-            <Sidebar />
+            <Sidebar
+              recentArticles={sidebarRecentArticles}
+              categories={sidebarCategories}
+              tags={sidebarTags}
+            />
           </div>
         </div>
       </main>
