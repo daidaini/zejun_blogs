@@ -22,14 +22,9 @@ const Navigation = () => {
 
   useEffect(() => {
     setMounted(true);
-    // Check for saved theme preference or default to light mode
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-      setIsDarkMode(true);
-      document.documentElement.classList.add('dark');
-    }
+    // 检查当前 HTML 元素是否已经有 dark 类
+    const isDarkModeActive = document.documentElement.classList.contains('dark');
+    setIsDarkMode(isDarkModeActive);
 
     // Close dropdown when clicking outside
     const handleClickOutside = (event: MouseEvent) => {

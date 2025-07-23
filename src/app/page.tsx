@@ -130,7 +130,7 @@ export default async function Home() {
             </div>
           </div>
           <div className="border-t border-slate-700 mt-8 pt-8 text-center text-sm">
-            <p>&copy; 2024 泽君的博客. 保留所有权利.</p>
+            <p>&copy; 2025 泽君的博客. 保留所有权利.</p>
           </div>
         </div>
       </footer>
