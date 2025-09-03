@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧箴言 - 思辨与启示</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'serif': ['Noto Serif SC', 'serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            900: '#0c4a6e'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .dark .gradient-bg {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+        }
+        .quote-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+        }
+        .quote-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        .dark .quote-card:hover {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        .stagger-5 { animation-delay: 0.5s; }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+<!-- META
+{
+  "title": "智慧箴言",
+  "date": "2025-08-28",
+  "category": "生活",
+  "tags": ["哲理", "经验"],
+  "excerpt": "十句醒世箴言",
+  "readTime": "5 分钟",
+  "author": "zejun"
+}
+-->
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="fixed top-6 right-6 z-50 p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+        <i class="fas fa-moon dark:hidden text-gray-600"></i>
+        <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+    </button>
+
+    <!-- Header -->
+    <header class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">智慧箴言</h1>
+            <p class="text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed animate-fade-in stagger-1">
+                探索思想家们对自由、权力与真相的深刻洞察
+            </p>
+            <div class="mt-8 animate-fade-in stagger-2">
+                <i class="fas fa-quote-left text-4xl opacity-60"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-16">
+        <!-- Quotes Grid -->
+        <section class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">十句醒世箴言</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Quote 1 -->
+                <div class="quote-card bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 animate-fade-in">
+                    <div class="flex items-start mb-4">
+                        <i class="fas fa-balance-scale text-primary-500 text-2xl mr-4 mt-1"></i>
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-lg mb-2 text-gray-800 dark:text-white">秩序与奴役</h3>
+                        </div>
+                    </div>
+                    <blockquote class="text-gray-700 dark:text-gray-300 leading-relaxed font-serif">
+                        "生命没有受到威胁的时候遵守社会规定，那叫秩序；生命受到威胁情况之下听从领导的话去送死，那叫奴隶。"
+                    </blockquote>
+                </div>
+
+                <!-- Quote 2 -->
+                <div class="quote-card bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 animate-fade-in stagger-1">
+                    <div class="flex items-start mb-4">
+                        <i class="fas fa-building text-primary-500 text-2xl mr-4 mt-1"></i>
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-lg mb-2 text-gray-800 dark:text-white">官僚体系的悲剧</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">—— 哈耶克</p>
+                        </div>
+                    </div>
+                    <blockquote class="text-gray-700 dark:text-gray-300 leading-relaxed font-serif">
+                        "官僚体系的终极悲剧是，它奖励服从，却惩罚良知。"
+                    </blockquote>
+                </div>
+
+                <!-- Quote 3 -->
+                <div class="quote-card bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 animate-fade-in stagger-2">
+                    <div class="flex items-start mb-4">
+                        <i class="fas fa-brain text-primary-500 text-2xl mr-4 mt-1"></i>
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-lg mb-2 text-gray-800 dark:text-white">最成功的洗脑</h3>
+                        </div>
+                    </div>
+                    <blockquote class="text-gray-700 dark:text-gray-300 leading-relaxed font-serif">
+                        "最成功的洗脑，就是让底层人民站在上层利益的角度去思考问题。"
+                    </blockquote>
+                </div>
+
+                <!-- Quote 4 -->
+                <div class="quote-card bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 animate-fade-in stagger-3">
+                    <div class="flex items-start mb-4">
+                        <i class="fas fa-volume-mute text-primary-500 text-2xl mr-4 mt-1"></i>
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-lg mb-2 text-gray-800 dark:text-white">一种声音的危险</h3>
+                        </div>
+                    </div>
+                    <blockquote class="text-gray-700 dark:text-gray-300 leading-relaxed font-serif">
+                        "如果只允许发一种声音，那一定是谎言！"
+                    </blockquote>
+                </div>
+
+                <!-- Quote 5 -->
+                <div class="quote-card bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 animate-fade-in stagger-4">
+                    <div class="flex items-start mb-4">
+                        <i class="fas fa-crown text-primary-500 text-2xl mr-4 mt-1"></i>
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-lg mb-2 text-gray-800 dark:text-white">世界上最大的无耻</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">—— 王朔</p>
+                        </div>
+                    </div>
+                    <blockquote class="text-gray-700 dark:text-gray-300 leading-relaxed font-serif">
+                        "世界上最大的无耻，就是你靠祖上享受了所有的红利，却转脸对我说，成功靠努力。世界上最无耻、最阴险、最歹毒的赞美，就是用穷人的艰辛和苦难，当作励志故事愚弄底层人。"
+                    </blockquote>
+                </div>
+
+                <!-- Quote 6 -->
+                <div class="quote-card bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 animate-fade-in stagger-5">
+                    <div class="flex items-start mb-4">
+                        <i class="fas fa-crutch text-primary-500 text-2xl mr-4 mt-1"></i>
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-lg mb-2 text-gray-800 dark:text-white">拐杖的隐喻</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">—— 鲁迅</p>
+                        </div>
+                    </div>
+                    <blockquote class="text-gray-700 dark:text-gray-300 leading-relaxed font-serif">
+                        "打断你的腿，再给你一副拐杖，然后告诉你，没有我，你连路都走不了。"
+                    </blockquote>
+                </div>
+
+                <!-- Quote 7 -->
+                <div class="quote-card bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 animate-fade-in">
+                    <div class="flex items-start mb-4">
+                        <i class="fas fa-yin-yang text-primary-500 text-2xl mr-4 mt-1"></i>
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-lg mb-2 text-gray-800 dark:text-white">天堂与地狱</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">—— 泰戈尔</p>
+                        </div>
+                    </div>
+                    <blockquote class="text-gray-700 dark:text-gray-300 leading-relaxed font-serif">
+                        "被文明征服是幸运，被野蛮征服是灾难。真正的天堂，你可以骂它是地狱。真正的地狱，你只能夸它是天堂。"
+                    </blockquote>
+                </div>
+
+                <!-- Quote 8 -->
+                <div class="quote-card bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 animate-fade-in stagger-1">
+                    <div class="flex items-start mb-4">
+                        <i class="fas fa-newspaper text-primary-500 text-2xl mr-4 mt-1"></i>
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-lg mb-2 text-gray-800 dark:text-white">新闻与历史</h3>
+                        </div>
+                    </div>
+                    <blockquote class="text-gray-700 dark:text-gray-300 leading-relaxed font-serif">
+                        "如果你看到的新闻是假的，那么，你学到的历史大概率也是假的。"
+                    </blockquote>
+                </div>
+
+                <!-- Quote 9 -->
+                <div class="quote-card bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 animate-fade-in stagger-2">
+                    <div class="flex items-start mb-4">
+                        <i class="fas fa-mask text-primary-500 text-2xl mr-4 mt-1"></i>
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-lg mb-2 text-gray-800 dark:text-white">大义与变节</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">—— 《明史·杨嗣昌传》</p>
+                        </div>
+                    </div>
+                    <blockquote class="text-gray-700 dark:text-gray-300 leading-relaxed font-serif">
+                        "口言大义者临阵必变节。"
+                    </blockquote>
+                </div>
+
+                <!-- Quote 10 -->
+                <div class="quote-card bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 animate-fade-in stagger-3">
+                    <div class="flex items-start mb-4">
+                        <i class="fas fa-dove text-primary-500 text-2xl mr-4 mt-1"></i>
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-lg mb-2 text-gray-800 dark:text-white">个人自由与国家自由</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">—— 胡适</p>
+                        </div>
+                    </div>
+                    <blockquote class="text-gray-700 dark:text-gray-300 leading-relaxed font-serif">
+                        "现在有人告诉你，牺牲你个人的自由去争取国家的自由，可是我要告诉你，为个人争取自由，便是为国家争自由，争取个人的人格，便是为国家争人格。真正自由平等的国家不是一群奴才建立起来的！"
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visualization Section -->
+        <section class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">主题分析</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Key Themes -->
+                <div class="bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50">
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-800 dark:text-white flex items-center">
+                        <i class="fas fa-lightbulb text-yellow-500 mr-3"></i>
+                        核心主题
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center p-4 bg-primary-50 dark:bg-primary-900/20 rounded-lg">
+                            <div class="w-4 h-4 bg-primary-500 rounded-full mr-4"></div>
+                            <span class="text-gray-700 dark:text-gray-300 font-medium">个人自由与权力制约</span>
+                        </div>
+                        <div class="flex items-center p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
+                            <div class="w-4 h-4 bg-green-500 rounded-full mr-4"></div>
+                            <span class="text-gray-700 dark:text-gray-300 font-medium">真相与谎言的辨识</span>
+                        </div>
+                        <div class="flex items-center p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+                            <div class="w-4 h-4 bg-purple-500 rounded-full mr-4"></div>
+                            <span class="text-gray-700 dark:text-gray-300 font-medium">社会阶层与话语权</span>
+                        </div>
+                        <div class="flex items-center p-4 bg-red-50 dark:bg-red-900/20 rounded-lg">
+                            <div class="w-4 h-4 bg-red-500 rounded-full mr-4"></div>
+                            <span class="text-gray-700 dark:text-gray-300 font-medium">批判性思维的重要性</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Author Distribution -->
+                <div class="bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50">
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-800 dark:text-white flex items-center">
+                        <i class="fas fa-users text-blue-500 mr-3"></i>
+                        思想家分布
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                            <span class="font-medium text-gray-700 dark:text-gray-300">哈耶克</span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400">经济学家</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                            <span class="font-medium text-gray-700 dark:text-gray-300">王朔</span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400">作家</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                            <span class="font-medium text-gray-700 dark:text-gray-300">鲁迅</span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400">文学家</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                            <span class="font-medium text-gray-700 dark:text-gray-300">泰戈尔</span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400">诗人</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                            <span class="font-medium text-gray-700 dark:text-gray-300">胡适</span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400">思想家</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Further Reading -->
+        <section class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">延伸阅读</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white/80 dark:bg-gray-800/80 p-6 rounded-xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-start mb-4">
+                        <i class="fas fa-book text-blue-500 text-xl mr-3 mt-1"></i>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 dark:text-white mb-2">《通往奴役之路》</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">弗里德里希·哈耶克</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-500">探讨计划经济如何导向专制主义的经典之作</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/80 dark:bg-gray-800/80 p-6 rounded-xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-start mb-4">
+                        <i class="fas fa-book text-green-500 text-xl mr-3 mt-1"></i>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 dark:text-white mb-2">《论自由》</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">约翰·斯图尔特·密尔</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-500">自由主义思想的奠基性著作</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/80 dark:bg-gray-800/80 p-6 rounded-xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-start mb-4">
+                        <i class="fas fa-book text-purple-500 text-xl mr-3 mt-1"></i>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 dark:text-white mb-2">《1984》</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">乔治·奥威尔</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-500">反乌托邦小说的巅峰之作</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/80 dark:bg-gray-800/80 p-6 rounded-xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-start mb-4">
+                        <i class="fas fa-book text-red-500 text-xl mr-3 mt-1"></i>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 dark:text-white mb-2">《乌合之众》</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">古斯塔夫·勒庞</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-500">群体心理学的开山之作</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/80 dark:bg-gray-800/80 p-6 rounded-xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-start mb-4">
+                        <i class="fas fa-book text-yellow-500 text-xl mr-3 mt-1"></i>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 dark:text-white mb-2">《独立宣言》</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">托马斯·杰斐逊</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-500">人类自由史上的里程碑文献</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 dark:bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <h3 class="text-2xl font-bold mb-4">作者信息</h3>
+                <p class="text-lg mb-6">Monica - AI智能助理</p>
+                <div class="flex justify-center space-x-6 mb-6">
+                    <a href="https://github.com" class="text-gray-300 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="https://twitter.com" class="text-gray-300 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                    <a href="https://linkedin.com" class="text-gray-300 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                </div>
+                <p class="text-gray-400 text-sm">
+                    © 2025 智慧箴言可视化项目. 保留所有权利.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        // Check for saved theme preference or default to 'light'
+        const currentTheme = localStorage.getItem('theme') || 
+                            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+        if (currentTheme === 'dark') {
+            html.classList.add('dark');
+        }
+
+        themeToggle.addEventListener('click', function() {
+            html.classList.toggle('dark');
+            
+            // Save theme preference
+            const theme = html.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+        });
+
+        // Smooth scrolling for better UX
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add intersection observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin:
