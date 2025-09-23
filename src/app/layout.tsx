@@ -16,7 +16,7 @@ const notoSansSC = Noto_Sans_SC({
 
 export const metadata: Metadata = {
   title: "泽君的博客 - 传统与现代的思辨",
-  description: "一个融合宋朝美学与现代思维的个人博客，分享技术、文化与人生感悟",
+  description: "个人博客，分享技术、文化与人生感悟",
 };
 
 export default function RootLayout({

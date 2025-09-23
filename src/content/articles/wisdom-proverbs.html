@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>智慧箴言 - 思辨与启示</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -34,36 +37,65 @@
         .gradient-bg {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
+
         .dark .gradient-bg {
             background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
         }
+
         .quote-card {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             backdrop-filter: blur(10px);
         }
+
         .quote-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
+
         .dark .quote-card:hover {
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
+
         .animate-fade-in {
             animation: fadeIn 0.8s ease-out forwards;
         }
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        .stagger-1 { animation-delay: 0.1s; }
-        .stagger-2 { animation-delay: 0.2s; }
-        .stagger-3 { animation-delay: 0.3s; }
-        .stagger-4 { animation-delay: 0.4s; }
-        .stagger-5 { animation-delay: 0.5s; }
+
+        .stagger-1 {
+            animation-delay: 0.1s;
+        }
+
+        .stagger-2 {
+            animation-delay: 0.2s;
+        }
+
+        .stagger-3 {
+            animation-delay: 0.3s;
+        }
+
+        .stagger-4 {
+            animation-delay: 0.4s;
+        }
+
+        .stagger-5 {
+            animation-delay: 0.5s;
+        }
     </style>
 </head>
+
 <body class="font-sans bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-<!-- META
+    <!-- META
 {
   "title": "智慧箴言",
   "date": "2025-08-28",
@@ -75,7 +107,8 @@
 }
 -->
     <!-- Theme Toggle -->
-    <button id="theme-toggle" class="fixed top-6 right-6 z-50 p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+    <button id="theme-toggle"
+        class="fixed top-6 right-6 z-50 p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
         <i class="fas fa-moon dark:hidden text-gray-600"></i>
         <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
     </button>
@@ -87,11 +120,10 @@
             <p class="text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed animate-fade-in stagger-1">
                 探索思想家们对自由、权力与真相的深刻洞察
             </p>
-            <div class="mt-8 animate-fade-in stagger-2">
-                <i class="fas fa-quote-left text-4xl opacity-60"></i>
-            </div>
         </div>
     </header>
+
+    <img src="/images/articles/lq22rm.jpg" alt="display image">
 
     <!-- Main Content -->
     <main class="container mx-auto px-6 py-16">
@@ -100,7 +132,8 @@
             <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">十句醒世箴言</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Quote 1 -->
-                <div class="quote-card bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 animate-fade-in">
+                <div
+                    class="quote-card bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 animate-fade-in">
                     <div class="flex items-start mb-4">
                         <i class="fas fa-balance-scale text-primary-500 text-2xl mr-4 mt-1"></i>
                         <div class="flex-1">
@@ -113,7 +146,8 @@
                 </div>
 
                 <!-- Quote 2 -->
-                <div class="quote-card bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 animate-fade-in stagger-1">
+                <div
+                    class="quote-card bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 animate-fade-in stagger-1">
                     <div class="flex items-start mb-4">
                         <i class="fas fa-building text-primary-500 text-2xl mr-4 mt-1"></i>
                         <div class="flex-1">
@@ -127,7 +161,8 @@
                 </div>
 
                 <!-- Quote 3 -->
-                <div class="quote-card bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 animate-fade-in stagger-2">
+                <div
+                    class="quote-card bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 animate-fade-in stagger-2">
                     <div class="flex items-start mb-4">
                         <i class="fas fa-brain text-primary-500 text-2xl mr-4 mt-1"></i>
                         <div class="flex-1">
@@ -140,7 +175,8 @@
                 </div>
 
                 <!-- Quote 4 -->
-                <div class="quote-card bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 animate-fade-in stagger-3">
+                <div
+                    class="quote-card bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 animate-fade-in stagger-3">
                     <div class="flex items-start mb-4">
                         <i class="fas fa-volume-mute text-primary-500 text-2xl mr-4 mt-1"></i>
                         <div class="flex-1">
@@ -153,7 +189,8 @@
                 </div>
 
                 <!-- Quote 5 -->
-                <div class="quote-card bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 animate-fade-in stagger-4">
+                <div
+                    class="quote-card bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 animate-fade-in stagger-4">
                     <div class="flex items-start mb-4">
                         <i class="fas fa-crown text-primary-500 text-2xl mr-4 mt-1"></i>
                         <div class="flex-1">
@@ -167,7 +204,8 @@
                 </div>
 
                 <!-- Quote 6 -->
-                <div class="quote-card bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 animate-fade-in stagger-5">
+                <div
+                    class="quote-card bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 animate-fade-in stagger-5">
                     <div class="flex items-start mb-4">
                         <i class="fas fa-crutch text-primary-500 text-2xl mr-4 mt-1"></i>
                         <div class="flex-1">
@@ -181,7 +219,8 @@
                 </div>
 
                 <!-- Quote 7 -->
-                <div class="quote-card bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 animate-fade-in">
+                <div
+                    class="quote-card bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 animate-fade-in">
                     <div class="flex items-start mb-4">
                         <i class="fas fa-yin-yang text-primary-500 text-2xl mr-4 mt-1"></i>
                         <div class="flex-1">
@@ -195,7 +234,8 @@
                 </div>
 
                 <!-- Quote 8 -->
-                <div class="quote-card bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 animate-fade-in stagger-1">
+                <div
+                    class="quote-card bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 animate-fade-in stagger-1">
                     <div class="flex items-start mb-4">
                         <i class="fas fa-newspaper text-primary-500 text-2xl mr-4 mt-1"></i>
                         <div class="flex-1">
@@ -208,7 +248,8 @@
                 </div>
 
                 <!-- Quote 9 -->
-                <div class="quote-card bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 animate-fade-in stagger-2">
+                <div
+                    class="quote-card bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 animate-fade-in stagger-2">
                     <div class="flex items-start mb-4">
                         <i class="fas fa-mask text-primary-500 text-2xl mr-4 mt-1"></i>
                         <div class="flex-1">
@@ -222,7 +263,8 @@
                 </div>
 
                 <!-- Quote 10 -->
-                <div class="quote-card bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 animate-fade-in stagger-3">
+                <div
+                    class="quote-card bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 animate-fade-in stagger-3">
                     <div class="flex items-start mb-4">
                         <i class="fas fa-dove text-primary-500 text-2xl mr-4 mt-1"></i>
                         <div class="flex-1">
@@ -242,7 +284,8 @@
             <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">主题分析</h2>
             <div class="grid md:grid-cols-2 gap-12">
                 <!-- Key Themes -->
-                <div class="bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50">
+                <div
+                    class="bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50">
                     <h3 class="text-2xl font-semibold mb-6 text-gray-800 dark:text-white flex items-center">
                         <i class="fas fa-lightbulb text-yellow-500 mr-3"></i>
                         核心主题
@@ -268,7 +311,8 @@
                 </div>
 
                 <!-- Author Distribution -->
-                <div class="bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50">
+                <div
+                    class="bg-white/80 dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50">
                     <h3 class="text-2xl font-semibold mb-6 text-gray-800 dark:text-white flex items-center">
                         <i class="fas fa-users text-blue-500 mr-3"></i>
                         思想家分布
@@ -303,7 +347,8 @@
         <section class="mb-20">
             <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">延伸阅读</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-white/80 dark:bg-gray-800/80 p-6 rounded-xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 hover:shadow-xl transition-shadow duration-300">
+                <div
+                    class="bg-white/80 dark:bg-gray-800/80 p-6 rounded-xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 hover:shadow-xl transition-shadow duration-300">
                     <div class="flex items-start mb-4">
                         <i class="fas fa-book text-blue-500 text-xl mr-3 mt-1"></i>
                         <div>
@@ -314,7 +359,8 @@
                     </div>
                 </div>
 
-                <div class="bg-white/80 dark:bg-gray-800/80 p-6 rounded-xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 hover:shadow-xl transition-shadow duration-300">
+                <div
+                    class="bg-white/80 dark:bg-gray-800/80 p-6 rounded-xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 hover:shadow-xl transition-shadow duration-300">
                     <div class="flex items-start mb-4">
                         <i class="fas fa-book text-green-500 text-xl mr-3 mt-1"></i>
                         <div>
@@ -325,7 +371,8 @@
                     </div>
                 </div>
 
-                <div class="bg-white/80 dark:bg-gray-800/80 p-6 rounded-xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 hover:shadow-xl transition-shadow duration-300">
+                <div
+                    class="bg-white/80 dark:bg-gray-800/80 p-6 rounded-xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 hover:shadow-xl transition-shadow duration-300">
                     <div class="flex items-start mb-4">
                         <i class="fas fa-book text-purple-500 text-xl mr-3 mt-1"></i>
                         <div>
@@ -336,7 +383,8 @@
                     </div>
                 </div>
 
-                <div class="bg-white/80 dark:bg-gray-800/80 p-6 rounded-xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 hover:shadow-xl transition-shadow duration-300">
+                <div
+                    class="bg-white/80 dark:bg-gray-800/80 p-6 rounded-xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 hover:shadow-xl transition-shadow duration-300">
                     <div class="flex items-start mb-4">
                         <i class="fas fa-book text-red-500 text-xl mr-3 mt-1"></i>
                         <div>
@@ -347,7 +395,8 @@
                     </div>
                 </div>
 
-                <div class="bg-white/80 dark:bg-gray-800/80 p-6 rounded-xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 hover:shadow-xl transition-shadow duration-300">
+                <div
+                    class="bg-white/80 dark:bg-gray-800/80 p-6 rounded-xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 hover:shadow-xl transition-shadow duration-300">
                     <div class="flex items-start mb-4">
                         <i class="fas fa-book text-yellow-500 text-xl mr-3 mt-1"></i>
                         <div>
@@ -361,54 +410,28 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 dark:bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-6">
-            <div class="text-center">
-                <h3 class="text-2xl font-bold mb-4">作者信息</h3>
-                <p class="text-lg mb-6">Monica - AI智能助理</p>
-                <div class="flex justify-center space-x-6 mb-6">
-                    <a href="https://github.com" class="text-gray-300 hover:text-white transition-colors duration-300">
-                        <i class="fab fa-github text-2xl"></i>
-                    </a>
-                    <a href="https://twitter.com" class="text-gray-300 hover:text-white transition-colors duration-300">
-                        <i class="fab fa-twitter text-2xl"></i>
-                    </a>
-                    <a href="https://linkedin.com" class="text-gray-300 hover:text-white transition-colors duration-300">
-                        <i class="fab fa-linkedin text-2xl"></i>
-                    </a>
-                </div>
-                <p class="text-gray-400 text-sm">
-                    © 2025 智慧箴言可视化项目. 保留所有权利.
-                </p>
-            </div>
-        </div>
-    </footer>
-
     <script>
         // Theme toggle functionality
         const themeToggle = document.getElementById('theme-toggle');
         const html = document.documentElement;
 
         // Check for saved theme preference or default to 'light'
-        const currentTheme = localStorage.getItem('theme') || 
-                            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        const currentTheme = localStorage.getItem('theme') ||
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
         if (currentTheme === 'dark') {
             html.classList.add('dark');
         }
 
-        themeToggle.addEventListener('click', function() {
+        themeToggle.addEventListener('click', function () {
             html.classList.toggle('dark');
-            
+
             // Save theme preference
             const theme = html.classList.contains('dark') ? 'dark' : 'light';
             localStorage.setItem('theme', theme);
         });
+    </script>
 
-        // Smooth scrolling for better UX
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add intersection observer for animations
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin:
+</body>
+
+</html>
