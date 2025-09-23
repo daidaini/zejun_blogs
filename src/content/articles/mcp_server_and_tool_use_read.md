@@ -1,10 +1,11 @@
 ---
-title:"MCP (Model Context Protocol) 服务器和工具综合指南"
-date:"2025-09-22"
+title: "MCP (Model Context Protocol) 服务器和工具综合指南"
+date: "2025-09-22"
 category: "技术"
-tags:["mcp", "llm", "claude code"]
-excerpt:"关于 MCP (Model Context Protocol) 服务器和工具的综合指南文档"
-readTime:"30 分钟"
+tags: ["mcp", "llm", "claude code"]
+excerpt: "关于 MCP (Model Context Protocol) 服务器和工具的综合指南文档"
+readTime: "30 分钟"
+image: "/images/articles/4e0d35810bce98014c308caf6cd6c3ef.jpg"
 ---
 
 ## 概述
