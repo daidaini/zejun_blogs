@@ -6,6 +6,7 @@ tags: ["小孩"]
 excerpt: "理解和处理小孩的注意力问题, 内容由ChatGPT生成"
 readTime: "20 分钟"
 author: "chatgpt"
+image: "/images/articles/moving_train.jpg"
 ---
 
 下面的内容分成三个部分：常见原因、评估与排查思路、家庭与课堂干预策略。你可以对照孩子的具体情况逐步分析。  
