@@ -4,7 +4,7 @@
 echo "🛑 正在停止服务器..."
 
 # 查找并停止占用3000端口的进程
-PORT=3000
+PORT=8080
 PIDS=$(lsof -ti:$PORT)
 
 if [ -z "$PIDS" ]; then

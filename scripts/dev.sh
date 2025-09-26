@@ -7,7 +7,7 @@ echo "🔧 Node.js 版本: $(node --version)"
 echo "📦 npm 版本: $(npm --version)"
 
 # 检查端口占用
-PORT=3000
+PORT=8080
 if lsof -Pi :$PORT -sTCP:LISTEN -t >/dev/null; then
     echo "⚠️  端口 $PORT 已被占用，正在尝试关闭..."
     lsof -ti:$PORT | xargs kill -9
