@@ -3,10 +3,10 @@ import { getArticlesByCategory } from '@/lib/articles-fs';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { category: string } }
+  { params }: { params: Promise<{ category: string }> }
 ) {
   try {
-    const { category } = params;
+    const { category } = await params;
 
     if (!category) {
       return NextResponse.json(
