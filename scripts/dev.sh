@@ -36,9 +36,21 @@ if [ $? -ne 0 ]; then
     fi
 fi
 
-# 启动开发服务器
-echo "🌐 启动开发服务器..."
+# 启动开发服务器（后台运行）
+echo "🌐 启动开发服务器（后台运行）..."
 echo "📍 访问地址: http://localhost:$PORT"
-echo "⏹️  按 Ctrl+C 停止服务器"
+echo "📝 查看日志: tail -f logs/dev.log"
+echo "⏹️  停止服务器: npm run stop"
 
-npm run dev
+# 创建日志目录
+mkdir -p logs
+
+# 后台启动开发服务器
+nohup npm run dev > logs/dev.log 2>&1 &
+DEV_PID=$!
+
+# 保存进程ID
+echo $DEV_PID > logs/dev.pid
+
+echo "✅ 开发服务器已启动 (PID: $DEV_PID)"
+echo "📋 日志文件: logs/dev.log"

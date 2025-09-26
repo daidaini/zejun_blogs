@@ -7,12 +7,12 @@
     "npm": ">=10.0.0"
   },
   "scripts": {
-    "dev": "next dev",
-    "dev:prod": "NODE_ENV=production next dev",
-    "dev:inspect": "NODE_OPTIONS='--inspect' next dev",
+    "dev": "next dev -p 8080",
+    "dev:prod": "NODE_ENV=production next dev -p 8080",
+    "dev:inspect": "NODE_OPTIONS='--inspect' next dev -p 8080",
     "build": "next build",
-    "start": "next start",
-    "start:prod": "NODE_ENV=production next start",
+    "start": "next start -p 8080",
+    "start:prod": "NODE_ENV=production next start -p 8080",
     "build:start": "npm run build && npm start",
     "build:analyze": "ANALYZE=true npm run build",
     "clean": "rm -rf .next out dist",
@@ -34,7 +34,9 @@
     "restart": "./scripts/restart.sh",
     "restart:prod": "./scripts/restart.sh prod",
     "clean:scripts": "./scripts/clean.sh",
-    "reset": "npm run clean:all && npm install"
+    "reset": "npm run clean:all && npm install",
+    "status": "./scripts/status.sh",
+    "logs": "./scripts/logs.sh"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.16",

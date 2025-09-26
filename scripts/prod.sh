@@ -40,9 +40,21 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-# 启动生产服务器
-echo "🌐 启动生产服务器..."
+# 启动生产服务器（后台运行）
+echo "🌐 启动生产服务器（后台运行）..."
 echo "📍 访问地址: http://localhost:$PORT"
-echo "⏹️  按 Ctrl+C 停止服务器"
+echo "📝 查看日志: tail -f logs/prod.log"
+echo "⏹️  停止服务器: npm run stop"
 
-npm start
+# 创建日志目录
+mkdir -p logs
+
+# 后台启动生产服务器
+nohup npm start > logs/prod.log 2>&1 &
+PROD_PID=$!
+
+# 保存进程ID
+echo $PROD_PID > logs/prod.pid
+
+echo "✅ 生产服务器已启动 (PID: $PROD_PID)"
+echo "📋 日志文件: logs/prod.log"

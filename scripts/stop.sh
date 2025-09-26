@@ -3,14 +3,40 @@
 # 停止开发/生产服务器
 echo "🛑 正在停止服务器..."
 
-# 查找并停止占用3000端口的进程
+# 停止通过PID文件记录的进程
+for server in "dev" "prod"; do
+    PID_FILE="logs/${server}.pid"
+    if [ -f "$PID_FILE" ]; then
+        PID=$(cat "$PID_FILE")
+        if ps -p $PID > /dev/null; then
+            echo "🛑 停止${server}服务器 (PID: $PID)..."
+            kill $PID
+
+            # 等待进程结束
+            sleep 2
+
+            # 如果进程还在运行，强制关闭
+            if ps -p $PID > /dev/null; then
+                echo "⚠️  强制关闭${server}服务器..."
+                kill -9 $PID
+            fi
+
+            echo "✅ ${server}服务器已停止"
+        fi
+
+        # 删除PID文件
+        rm -f "$PID_FILE"
+    fi
+done
+
+# 查找并停止占用8080端口的进程
 PORT=8080
 PIDS=$(lsof -ti:$PORT)
 
 if [ -z "$PIDS" ]; then
     echo "✅ 端口 $PORT 没有被占用"
 else
-    echo "🔍 找到进程: $PIDS"
+    echo "🔍 找到占用端口 $PORT 的进程: $PIDS"
 
     # 尝试优雅关闭
     echo "🔄 尝试优雅关闭..."
@@ -25,7 +51,7 @@ else
         kill -9 $PIDS
     fi
 
-    echo "✅ 服务器已停止"
+    echo "✅ 端口 $PORT 的进程已停止"
 fi
 
 # 查找Next.js相关进程
