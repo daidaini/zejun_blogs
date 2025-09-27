@@ -98,9 +98,9 @@ export default async function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <h3 className="font-serif text-lg font-semibold text-white mb-4">泽君的博客</h3>
+              <h3 className="font-serif text-lg font-semibold text-white mb-4">ZeJun的博客</h3>
               <p className="text-sm leading-relaxed">
-                传承古韵，融汇今思。在传统与现代的交汇中寻找智慧的光芒。
+                记录生活，记录学习，记录进步。
               </p>
             </div>
             <div>
@@ -124,7 +124,7 @@ export default async function Home() {
             </div>
           </div>
           <div className="border-t border-slate-700 mt-8 pt-8 text-center text-sm">
-            <p>&copy; 2025 泽君的博客. 保留所有权利.</p>
+            <p>&copy; 2025 ZeJun的博客. 保留所有权利.</p>
           </div>
         </div>
       </footer>

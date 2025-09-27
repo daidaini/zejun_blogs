@@ -68,13 +68,13 @@ const Hero = () => {
         {/* Main Title */}
         <h1 className={`font-serif text-4xl md:text-6xl font-bold text-slate-800 dark:text-slate-100 mb-6 transition-all duration-1000 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <span className="bg-gradient-to-r from-amber-600 via-red-600 to-orange-600 bg-clip-text text-transparent">
-            泽君的博客
+            ZeJun's Blogs
           </span>
         </h1>
 
         {/* Subtitle */}
         <p className={`font-sans text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed transition-all duration-1000 delay-300 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          传承古韵，融汇今思 · 在传统与现代的交汇中寻找智慧的光芒
+           在生活的缝隙中发现写什么，留下些什么
         </p>
 
         {/* Decorative Quote */}
@@ -85,31 +85,6 @@ const Hero = () => {
           <cite className="block mt-2 text-sm text-slate-500 dark:text-slate-400">
             —— 《礼记·中庸》
           </cite>
-        </div>
-
-        {/* Call to Action */}
-        <div className={`flex flex-col sm:flex-row gap-4 justify-center items-center transition-all duration-1000 delay-900 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <button
-            onClick={scrollToContent}
-            className="px-8 py-3 bg-gradient-to-r from-amber-600 to-red-600 text-white font-medium rounded-full hover:from-amber-700 hover:to-red-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
-          >
-            开始阅读
-          </button>
-          <button
-            onClick={scrollToAbout}
-            className="px-8 py-3 border-2 border-amber-600 text-amber-600 dark:text-amber-400 dark:border-amber-400 font-medium rounded-full hover:bg-amber-600 hover:text-white dark:hover:bg-amber-400 dark:hover:text-slate-900 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
-          >
-            了解更多
-          </button>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-all duration-1000 delay-1200 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="animate-bounce">
-            <svg className="w-6 h-6 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </div>
         </div>
       </div>
     </section>
