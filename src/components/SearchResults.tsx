@@ -9,7 +9,7 @@ interface SearchResultsProps {
   loading?: boolean;
 }
 
-const SearchResults = ({ results, query, loading = false }: SearchResultsProps) => {
+const SearchResults = ({ results, loading = false }: SearchResultsProps) => {
   if (loading) {
     return (
       <div className="space-y-6">

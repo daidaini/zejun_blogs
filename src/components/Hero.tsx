@@ -9,17 +9,7 @@ const Hero = () => {
     setMounted(true);
   }, []);
 
-  const scrollToContent = () => {
-    const contentSection = document.getElementById('main-content');
-    if (contentSection) {
-      contentSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
-  const scrollToAbout = () => {
-    // In a real app, this would navigate to an about page
-    window.location.href = '/about';
-  };
 
   return (
     <section className="relative py-16 px-4 overflow-hidden">
@@ -68,7 +58,7 @@ const Hero = () => {
         {/* Main Title */}
         <h1 className={`font-serif text-4xl md:text-6xl font-bold text-slate-800 dark:text-slate-100 mb-6 transition-all duration-1000 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <span className="bg-gradient-to-r from-amber-600 via-red-600 to-orange-600 bg-clip-text text-transparent">
-            ZeJun's Blogs
+            ZeJun&apos;s Blogs
           </span>
         </h1>
 

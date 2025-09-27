@@ -84,7 +84,7 @@ const Navigation = () => {
               <span className="text-white font-bold text-sm">Jun</span>
             </div>
             <span className="font-serif text-xl font-semibold text-slate-800 dark:text-slate-200">
-              ZeJun's Blogs
+              ZeJun&apos;s Blogs
             </span>
           </Link>
 

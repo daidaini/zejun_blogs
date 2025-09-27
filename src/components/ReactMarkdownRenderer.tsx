@@ -20,6 +20,7 @@ const ReactMarkdownRenderer = ({ content, className = '' }: ReactMarkdownRendere
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeHighlight, rehypeRaw]}
+        unwrapDisallowed
         components={{
           // 自定义标题渲染
           h1: ({ children }) => (
@@ -168,31 +169,35 @@ const ReactMarkdownRenderer = ({ content, className = '' }: ReactMarkdownRendere
             <hr className="my-8 border-slate-200 dark:border-slate-700" />
           ),
           
-          // 自定义图片渲染
+          // 自定义图片渲染 - 避免嵌套问题
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          img: ({ src, alt }: any) => (
-            <div className="my-6">
-              {src ? (
+          img: ({ src, alt }: any) => {
+            if (!src) {
+              return (
+                <div className="my-6 bg-slate-200 dark:bg-slate-700 rounded-lg h-40 flex items-center justify-center">
+                  <span className="text-slate-500 dark:text-slate-400">图片加载失败</span>
+                </div>
+              );
+            }
+
+            return (
+              <>
                 <Image
                   src={src}
                   alt={alt || ''}
                   width={800}
                   height={400}
-                  className="rounded-lg shadow-lg max-w-full h-auto mx-auto"
+                  className="rounded-lg shadow-lg max-w-full h-auto mx-auto my-6"
                   style={{ width: 'auto', height: 'auto' }}
                 />
-              ) : (
-                <div className="bg-slate-200 dark:bg-slate-700 rounded-lg h-40 flex items-center justify-center">
-                  <span className="text-slate-500 dark:text-slate-400">图片加载失败</span>
-                </div>
-              )}
-              {alt && (
-                <p className="text-center text-sm text-slate-500 dark:text-slate-400 mt-2 italic">
-                  {alt}
-                </p>
-              )}
-            </div>
-          ),
+                {alt && (
+                  <div className="text-center text-sm text-slate-500 dark:text-slate-400 mt-2 italic -mb-4">
+                    {alt}
+                  </div>
+                )}
+              </>
+            );
+          },
         }}
       >
         {content}
