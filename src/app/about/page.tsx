@@ -10,25 +10,18 @@ export default function AboutPage() {
           {/* Header */}
           <header className="text-center mb-12">
             <div className="w-24 h-24 bg-gradient-to-br from-amber-600 to-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
-              <span className="text-white font-bold text-2xl">泽</span>
+              <span className="text-white font-bold text-2xl">Jun</span>
             </div>
             <h1 className="font-serif text-3xl md:text-4xl font-bold text-slate-800 dark:text-slate-100 mb-4">
-              关于泽君
+              About ZeJun
             </h1>
             <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              传承古韵，融汇今思 · 在传统与现代的交汇中寻找智慧的光芒
+              记录生活，记录学习，记录进步。
             </p>
           </header>
 
           {/* Content */}
           <div className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-serif prose-headings:text-slate-800 dark:prose-headings:text-slate-100 prose-p:text-slate-700 dark:prose-p:text-slate-300">
-            <h2>我的故事</h2>
-            <p>
-              我是泽君，一个在传统文化与现代科技之间寻找平衡的思考者。从小就对中国传统文化有着深厚的兴趣，
-              特别是宋代的文人美学和哲学思想。在现代社会的快节奏生活中，我试图将古人的智慧与当代的思维方式相结合，
-              创造出既有深度又有现实意义的内容。
-            </p>
-
             <h2>我的理念</h2>
             <blockquote>
               <p>&ldquo;博学之，审问之，慎思之，明辨之，笃行之&rdquo;</p>
@@ -42,7 +35,7 @@ export default function AboutPage() {
 
             <h2>我的兴趣</h2>
             <ul>
-              <li><strong>传统文化研究</strong>：特别关注宋代文人的生活美学和哲学思想</li>
+              <li><strong>传统文化</strong>：特别关注宋代文人的生活美学和哲学思想</li>
               <li><strong>现代设计</strong>：探索如何将传统美学融入现代设计理念</li>
               <li><strong>技术哲学</strong>：思考技术发展对人类社会和文化的影响</li>
               <li><strong>禅意生活</strong>：在快节奏的现代生活中寻找内心的宁静</li>
@@ -65,9 +58,8 @@ export default function AboutPage() {
               欢迎通过以下方式联系我：
             </p>
             <ul>
-              <li>邮箱：zejun@example.com</li>
-              <li>微博：@泽君的博客</li>
-              <li>GitHub：@zejun</li>
+              <li>X：@zejun105</li>
+              <li>GitHub：@daidaini</li>
             </ul>
 
             <div className="mt-12 p-6 bg-amber-50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">

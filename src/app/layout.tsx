@@ -15,7 +15,7 @@ const notoSansSC = Noto_Sans_SC({
 });
 
 export const metadata: Metadata = {
-  title: "泽君的博客 - 传统与现代的思辨",
+  title: "ZeJun's blogs - 生活&思考",
   description: "个人博客，分享技术、文化与人生感悟",
 };
 
@@ -27,6 +27,8 @@ export default function RootLayout({
   return (
     <html lang="zh-CN" suppressHydrationWarning>
       <head>
+        <link rel="icon" href="/images/icons/headlogo-1.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/images/icons/headlogo-1.png" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
